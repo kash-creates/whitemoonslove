@@ -1,0 +1,344 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: 'Playfair Display', serif;
+  --font-sans: 'Poppins', sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  color-scheme: light;
+  /* Premium Luxury Color Palette */
+  --background: #faf6ef;
+  --foreground: #2a2a2a;
+  --card: #ffffff;
+  --card-foreground: #2a2a2a;
+  --popover: #ffffff;
+  --popover-foreground: #2a2a2a;
+  --primary: #5d4037;
+  --primary-foreground: #faf6ef;
+  --secondary: #4a2e24;
+  --secondary-foreground: #faf6ef;
+  --muted: #e8e0d8;
+  --muted-foreground: #6b6b6b;
+  --accent: #c8a96a;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --border: #e0d9d0;
+  --input: #fafafa;
+  --ring: #c8a96a;
+  --chart-1: #c8a96a;
+  --chart-2: #5d4037;
+  --chart-3: #4a2e24;
+  --chart-4: #d4a574;
+  --chart-5: #e8e0d8;
+  --radius: 0.625rem;
+  --sidebar: #faf6ef;
+  --sidebar-foreground: #2a2a2a;
+  --sidebar-primary: #5d4037;
+  --sidebar-primary-foreground: #faf6ef;
+  --sidebar-accent: #c8a96a;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #e0d9d0;
+  --sidebar-ring: #c8a96a;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #1a1714;
+  --foreground: #f5f1eb;
+  --card: #2a2319;
+  --card-foreground: #f5f1eb;
+  --popover: #2a2319;
+  --popover-foreground: #f5f1eb;
+  --primary: #c8a96a;
+  --primary-foreground: #1a1714;
+  --secondary: #5d4037;
+  --secondary-foreground: #f5f1eb;
+  --muted: #3a3330;
+  --muted-foreground: #b8b0a8;
+  --accent: #e8d4b8;
+  --accent-foreground: #1a1714;
+  --destructive: #ef4444;
+  --border: #3a3330;
+  --input: #2a2319;
+  --ring: #c8a96a;
+  --chart-1: #c8a96a;
+  --chart-2: #5d4037;
+  --chart-3: #4a2e24;
+  --chart-4: #d4a574;
+  --chart-5: #6b5d4f;
+  --sidebar: #2a2319;
+  --sidebar-foreground: #f5f1eb;
+  --sidebar-primary: #c8a96a;
+  --sidebar-primary-foreground: #1a1714;
+  --sidebar-accent: #e8d4b8;
+  --sidebar-accent-foreground: #1a1714;
+  --sidebar-border: #3a3330;
+  --sidebar-ring: #c8a96a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    color-scheme: dark;
+    --background: #1a1714;
+    --foreground: #f5f1eb;
+    --card: #2a2319;
+    --card-foreground: #f5f1eb;
+    --popover: #2a2319;
+    --popover-foreground: #f5f1eb;
+    --primary: #c8a96a;
+    --primary-foreground: #1a1714;
+    --secondary: #5d4037;
+    --secondary-foreground: #f5f1eb;
+    --muted: #3a3330;
+    --muted-foreground: #b8b0a8;
+    --accent: #e8d4b8;
+    --accent-foreground: #1a1714;
+    --destructive: #ef4444;
+    --border: #3a3330;
+    --input: #2a2319;
+    --ring: #c8a96a;
+    --chart-1: #c8a96a;
+    --chart-2: #5d4037;
+    --chart-3: #4a2e24;
+    --chart-4: #d4a574;
+    --chart-5: #6b5d4f;
+    --sidebar: #2a2319;
+    --sidebar-foreground: #f5f1eb;
+    --sidebar-primary: #c8a96a;
+    --sidebar-primary-foreground: #1a1714;
+    --sidebar-accent: #e8d4b8;
+    --sidebar-accent-foreground: #1a1714;
+    --sidebar-border: #3a3330;
+    --sidebar-ring: #c8a96a;
+  }
+}
+
+/* ---------- Glassmorphism utilities ---------- */
+
+.glass {
+  background: color-mix(in srgb, var(--card) 55%, transparent);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid color-mix(in srgb, var(--foreground) 10%, transparent);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.glass-strong {
+  background: color-mix(in srgb, var(--card) 75%, transparent);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+}
+
+.glass-nav {
+  background: color-mix(in srgb, var(--background) 65%, transparent);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+.glass-card {
+  border-radius: 1rem;
+  transition: all 500ms;
+}
+
+.glass-card:hover {
+  background: color-mix(in srgb, var(--card) 70%, transparent);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.14);
+  transform: translateY(-6px);
+}
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-scale.in-view {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ---------- Animations ---------- */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-16px) rotate(2deg); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+.animate-float-slow {
+  animation: float 9s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.animate-shimmer {
+  background: linear-gradient(
+    100deg,
+    transparent 30%,
+    color-mix(in srgb, var(--accent) 60%, white) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 45%, transparent); }
+  50% { box-shadow: 0 0 0 14px color-mix(in srgb, var(--accent) 0%, transparent); }
+}
+.animate-glow {
+  animation: glow-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-x 6s ease infinite;
+}
+
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 20%, rgba(255,255,255,0.35) 50%, transparent 80%);
+  transform: translateX(-120%);
+  transition: transform 0.7s ease;
+}
+.btn-shine:hover::after {
+  transform: translateX(120%);
+}
+
+/* ---------- Cream Texture Background ---------- */
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background-image: url("/cream-background.jpeg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: repeat !important;
+  background-attachment: fixed !important;
+}
+
+/* Har page aur har section mein texture dikhane ke liye */
+main,
+main section,
+.bg-background,
+.bg-muted,
+.bg-muted\/30 {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* ---------- Premium Website Background ---------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(200, 169, 106, 0.22),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(93, 64, 55, 0.13),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 50% 90%,
+      rgba(212, 165, 116, 0.16),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #faf6ef 0%,
+      #f5ede2 48%,
+      #eee1d2 100%
+    );
+
+  background-attachment: fixed;
+  color: var(--foreground);
+  font-family: 'Poppins', sans-serif;
+
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+body{ 
+  overflow-x: hidden;
+  background: #FAF6F2;
+}
