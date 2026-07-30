@@ -67,6 +67,10 @@ export async function POST(req: NextRequest) {
     saved = await appendEntry('contact-messages', record)
   }
 
+  // await notifyOwner(
+//   `New contact message from ${record.name}`,
+//   `<h2>New contact message</h2>`
+// )
   await notifyOwner(
     `New contact message from ${record.name}`,
     `<h2>New contact message</h2>
@@ -77,7 +81,14 @@ export async function POST(req: NextRequest) {
      <p><b>Message:</b> ${record.message}</p>`
   )
 
-  return NextResponse.json({ success: true, message: saved }, { status: 201 })
+  return NextResponse.json(
+    {
+     success: true,
+     message: "Contact form is working",
+    data: record,
+   },
+    { status: 201 }
+  )
 }
 
 export async function GET(req: NextRequest) {
@@ -85,6 +96,7 @@ export async function GET(req: NextRequest) {
   if (unauthorized) return unauthorized
 
   const supabase = getSupabase()
+  console.log("SUPABASE:",!!supabase)
   if (supabase) {
     const { data, error } = await supabase
       .from('contact_messages')
