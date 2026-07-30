@@ -41,10 +41,18 @@ export default function Contact() {
           message: formData.message,
         }),
       })
-      const data = await res.json()
-      if (!res.ok) {
-        throw new Error(data?.details?.join(', ') || data?.error || 'Something went wrong')
+      let data = null
+
+      try{
+        data = await res.json()
+      } catch {
+        data = null
       }
+
+      if (!res.ok) {
+        throw new Error(data?.details?.join(', ') || data?.error || 'Server Error (${res.status})'
+      )
+    }
       setSubmitted(true)
       setFormData({
         name: '',

@@ -67,21 +67,19 @@ export async function POST(req: NextRequest) {
     saved = await appendEntry('contact-messages', record)
   }
 
-  // await notifyOwner(
-//   `New contact message from ${record.name}`,
-//   `<h2>New contact message</h2>`
-// )
-  await notifyOwner(
-    `New contact message from ${record.name}`,
-    `<h2>New contact message</h2>
-     <p><b>Name:</b> ${record.name}</p>
-     <p><b>Email:</b> ${record.email}</p>
-     <p><b>Phone:</b> ${record.phone || '—'}</p>
-     <p><b>Subject:</b> ${record.subject || '—'}</p>
-     <p><b>Message:</b> ${record.message}</p>`
-  )
-
-  return NextResponse.json(
+  
+  //console.log('POST request reached')
+  //await notifyOwner(
+    //`New contact message from ${record.name}`,
+    //`<h2>New contact message</h2>
+     //<p><b>Name:</b> ${record.name}</p>
+     //<p><b>Email:</b> ${record.email}</p>
+     //<p><b>Phone:</b> ${record.phone || '—'}</p>
+     //<p><b>Subject:</b> ${record.subject || '—'}</p>
+     //<p><b>Message:</b> ${record.message}</p>`)
+  
+   console.log("API reached successfully");
+     return NextResponse.json(
     {
      success: true,
      message: "Contact form is working",
